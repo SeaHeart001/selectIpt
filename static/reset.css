@@ -1,0 +1,17 @@
+*{
+	margin:0;
+	padding:0;
+}
+ul li{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+}
+input,button{
+	outline:none;
+}
+html,body{
+	height: 100%;
+	width: 100%
+}

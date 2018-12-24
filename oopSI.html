@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./static/reset.css">
+    <link rel="stylesheet" href="./css/oopSI.css">
+    <style>
+        #selectInput{
+            /* display: inline-block; */
+            box-sizing: border-box;
+            width: 200px;
+        }
+        .inputCls{
+            border: 1px solid #eee;
+            width: 100%;
+            height:30px;
+            box-sizing: border-box;
+            text-indent: 10px;
+        }
+        .submit{
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="selectInput">
+        <!-- div的id作为参数传给构造函数, input规定必须为此div子元素且name="inputCls", 组件功能才能使用 -->
+        <input class="inputCls" name="inputCls" type="text" placeholder="请输入或搜索">
+    </div>
+    <input type="button" value="submit" name="submit" class="submit">
+
+    <script src="./static/jquery-1.12.4.js"></script>
+    <script src="./js/oopSI.js"></script>
+    <script>
+        var dataMsgAry = ['item001', 'item002', 'item003', 'item004', 'item005', 'item006'];
+        
+        var mySelect01 = new SctIptFunction('selectInput');//组件的id
+        mySelect01.initMySelete(dataMsgAry);
+
+        //submitFun为提交的方法,两个参数，
+        //第一个为input的dom，第二个为清空方法，(一般为函数逻辑成功时)调用即可
+
+        mySelect01.submitFun(function (inputEle, clear) {
+            $('[name="submit"]').click(function () {
+                //e.stopPropagation();
+                var msg = inputEle.val();
+                if (msg) {
+                    alert(msg);
+                }
+                clear();
+            });
+        })
+
+    </script>
+</body>
+
+</html>

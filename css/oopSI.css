@@ -1,0 +1,29 @@
+
+.itemWrap{
+    width: 100%;
+    display: none
+}
+.itemOption{
+    cursor: pointer;
+    position: relative;
+    height: 28px;
+    line-height: 28px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 10px;
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+.itemOption:hover{
+    background-color: rgb(233, 231, 231)
+}
+.itemFlag{
+    position: absolute;
+    right: 20px;
+    color: #0099ff;
+    display: none;
+}
+.show{
+    display: inline-block;
+}
